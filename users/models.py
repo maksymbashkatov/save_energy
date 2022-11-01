@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from organizations.models import OrganizationProject
 from users.managers import CustomUserManager
 
 
@@ -13,7 +14,7 @@ class CustomUser(AbstractUser):
     username = None
     email = models.EmailField(unique=True)
     role = models.CharField(max_length=20, choices=roles, default=roles[2][0])
-    organization_project = ...
+    organization_project = models.ForeignKey(OrganizationProject, on_delete=models.CASCADE, blank=True, null=True)
 
     objects = CustomUserManager()
 
@@ -21,6 +22,6 @@ class CustomUser(AbstractUser):
     REQUIRED_FIELDS = []
 
     class Meta:
-        db_table = 'users'
-        verbose_name = 'user'
-        verbose_name_plural = 'users'
+        db_table = 'Users'
+        verbose_name = 'User'
+        verbose_name_plural = 'Users'
