@@ -1,0 +1,8 @@
+<div>
+    <b>{{ user.email }}</b> | <a href="{% url 'logout' %}">Logout</a>
+</div><br>
+{% for u in object_list %}
+<div>
+    {{ u.email }}
+</div>
+{% endfor %}

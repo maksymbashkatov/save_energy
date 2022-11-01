@@ -1,0 +1,23 @@
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            Email:
+        </div>
+        <div>
+            {{ form.username }}
+        </div>
+        <div>
+            Enter password:
+        </div>
+        <div>
+            {{ form.password }}
+        </div>
+        <div>
+            <input type="submit" value="Sign In">
+        </div>
+        <div>
+            <div class="form-error">{{ form.errors }}</div>
+        </div>
+    </form>
+</div>

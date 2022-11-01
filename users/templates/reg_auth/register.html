@@ -1,0 +1,29 @@
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            Email:
+        </div>
+        <div>
+            {{ form.email }}
+        </div>
+        <div>
+            Enter password:
+        </div>
+        <div>
+            {{ form.password1 }}
+        </div>
+        <div>
+            Confirm password:
+        </div>
+        <div>
+            {{ form.password2 }}
+        </div>
+        <div>
+            <input type="submit" value="Create user">
+        </div>
+        <div>
+            <div class="form-error">{{ form.errors }}</div>
+        </div>
+    </form>
+</div>
