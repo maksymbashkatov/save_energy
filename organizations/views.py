@@ -26,4 +26,8 @@ class OrganizationObjectListAPIView(ListAPIView):
     def get_queryset(self):
         user = self.request.user
         if user.role == 'S':
+            return OrganizationObject.objects.filter(organization_project=user.organization_project)[:1]
+        if user.role == 'M':
             return OrganizationObject.objects.filter(organization_project=user.organization_project)
+        else:
+            return OrganizationObject.objects.all()
