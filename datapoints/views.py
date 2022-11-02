@@ -1,4 +1,4 @@
-from rest_framework.generics import RetrieveAPIView, UpdateAPIView
+from rest_framework.generics import RetrieveAPIView, UpdateAPIView, ListAPIView
 from rest_framework.permissions import IsAuthenticated
 from datapoints.models import Datapoint
 from datapoints.serializers import DatapointSerializer
@@ -18,3 +18,9 @@ class DatapointUpdateAPIView(UpdateAPIView):
     def put(self, request, *args, **kwargs):
         print(request)
         return self.update(request, *args, **kwargs)
+
+
+class DatapointListAPIView(ListAPIView):
+    queryset = Datapoint.objects.all()
+    serializer_class = DatapointSerializer
+    # permission_classes = (IsAuthenticated,)
