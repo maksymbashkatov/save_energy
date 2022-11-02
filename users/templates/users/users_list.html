@@ -3,6 +3,6 @@
 </div><br>
 {% for u in object_list %}
 <div>
-    {{ u.email }}
+    {{ u.id }} | {{ u.email }} | {{ u.get_role_display }}
 </div>
 {% endfor %}

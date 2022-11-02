@@ -6,9 +6,9 @@ from users.managers import CustomUserManager
 
 class CustomUser(AbstractUser):
     roles = (
-        ('A', 'admin'),
-        ('M', 'moderator'),
-        ('SU', 'simple_user')
+        ('A', 'Admin'),
+        ('M', 'Moderator'),
+        ('S', 'Simple')
     )
 
     username = None
