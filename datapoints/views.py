@@ -23,4 +23,4 @@ class DatapointUpdateAPIView(UpdateAPIView):
 class DatapointListAPIView(ListAPIView):
     queryset = Datapoint.objects.all()
     serializer_class = DatapointSerializer
-    # permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
